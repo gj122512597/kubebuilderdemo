@@ -19,9 +19,9 @@ package controllers
 import (
 	"context"
 	"fmt"
-	"runtime/debug"
 	"github.com/go-logr/logr"
 	"k8s.io/apimachinery/pkg/runtime"
+	"runtime/debug"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 

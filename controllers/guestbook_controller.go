@@ -18,7 +18,8 @@ package controllers
 
 import (
 	"context"
-
+	"fmt"
+	"runtime/debug"
 	"github.com/go-logr/logr"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -42,6 +43,8 @@ func (r *GuestbookReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
 	_ = r.Log.WithValues("guestbook", req.NamespacedName)
 
 	// your logic here
+	r.Log.Info(fmt.Sprintf("1. %v", req))
+	r.Log.Info(fmt.Sprintf("2. %s", debug.Stack()))
 
 	return ctrl.Result{}, nil
 }
